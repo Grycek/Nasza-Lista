@@ -1,0 +1,25 @@
+= form_tag '/elimination_votes' do
+  =select_tag(:song_id1, options_for_select( @songs.map {|song| [song.artist + ' - ' + song.title, song.id]} ), {:required => true})
+  %br
+  =select_tag(:song_id2, options_for_select( @songs.map {|song| [song.artist + ' - ' + song.title, song.id]} ), {:required => true})
+  %br
+  =select_tag(:song_id3, options_for_select( @songs.map {|song| [song.artist + ' - ' + song.title, song.id]} ), {:required => true})
+  %br
+  =select_tag(:song_id4, options_for_select( @songs.map {|song| [song.artist + ' - ' + song.title, song.id]} ), {:required => true})
+  %br
+  =select_tag(:song_id5, options_for_select( @songs.map {|song| [song.artist + ' - ' + song.title, song.id]} ), {:required => true})
+  %br
+  =select_tag(:song_id6, options_for_select( @songs.map {|song| [song.artist + ' - ' + song.title, song.id]} ), {:required => true})
+  %br
+  =select_tag(:song_id7, options_for_select( @songs.map {|song| [song.artist + ' - ' + song.title, song.id]} ), {:required => true})
+  %br
+  =select_tag(:song_id8, options_for_select( @songs.map {|song| [song.artist + ' - ' + song.title, song.id]} ), {:required => true})
+  %br
+  =select_tag(:song_id9, options_for_select( @songs.map {|song| [song.artist + ' - ' + song.title, song.id]} ), {:required => true})
+  %br
+  =select_tag(:song_id10, options_for_select( @songs.map {|song| [song.artist + ' - ' + song.title, song.id]} ), {:required => true})
+  %br
+  =select_tag(:song_id11, options_for_select( @songs.map {|song| [song.artist + ' - ' + song.title, song.id]} ), {:required => true})
+  %br
+  
+  = submit_tag 'Vote'

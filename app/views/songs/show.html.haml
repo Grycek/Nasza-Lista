@@ -1,0 +1,14 @@
+- title "Song"
+
+%p
+  %strong Title:
+  = @song.title
+%p
+  %strong Artist:
+  = @song.artist
+%p
+  %strong Description:
+  = @song.description
+
+%p
+  = link_to "View All", songs_path

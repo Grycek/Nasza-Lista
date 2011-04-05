@@ -1,0 +1,15 @@
+one:
+  title: MyString
+  artist: MyString
+  user_id: 1
+  edycja_id: 1
+  czas: 1
+  description: MyText
+
+two:
+  title: MyString
+  artist: MyString
+  user_id: 1
+  edycja_id: 1
+  czas: 1
+  description: MyText

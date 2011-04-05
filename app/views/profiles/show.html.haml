@@ -1,0 +1,45 @@
+- title "Profile"
+%table
+  %tr
+    %td
+      Uzytkownik:
+    %td
+      =current_user.username
+  %tr
+    %td
+      Email:
+    %td
+      =current_user.email
+%hr
+%p
+  %h3
+    Twoje utwory:
+  %table
+    %tr
+      %th Artist
+      %th Title
+    - for song in @songs
+      %tr
+        %td= song.artist
+        %td= song.title
+        %td= link_to 'Show', song
+  %p= link_to "Dodaj utwór", new_song_path
+%hr
+%p
+  %h3
+    Glosy w eliminacjach:
+  %table
+    %tr
+      %th Pos.
+      %th Artist
+      %th Title
+      %th Points
+    - for vote in @votes
+      %tr
+        %td= points_to_pos(vote.points)
+        %td= (Song.find(vote.song_id)).artist
+        %td= (Song.find(vote.song_id)).title
+        %td= vote.points
+          
+%hr
+=link_to "Edytuj haslo", edit_user_password_path

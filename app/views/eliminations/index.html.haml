@@ -1,0 +1,28 @@
+Elimination votes
+- @songs.each do |song|
+  =song.artist
+  
+%table
+  %tr
+    %th Artist
+    %th Title
+    %th Points
+    - @eliminations.each do |el|
+      %th
+        =el.user.username
+  -@songs.each do |song|
+    %tr
+      %td
+        =song.artist
+      %td
+        =song.title
+      %td
+        0
+      - @eliminations.each do |el|
+        %td
+          =#song.elimination_votes.where("user_id = ?", el.user_id).limit(1).methods.sort
+          - if el.elimination_votes.where("song_id = ?", song.id).size == 1
+            =el.elimination_votes.where("song_id = ?", song.id)[0].points
+      
+  
+= link_to "Zaglosuj", new_elimination_path

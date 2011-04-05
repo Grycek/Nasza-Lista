@@ -1,0 +1,3 @@
+module EliminationsHelper
+
+end

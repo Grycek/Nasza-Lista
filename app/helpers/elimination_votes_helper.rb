@@ -1,0 +1,2 @@
+module EliminationVotesHelper
+end

@@ -6,6 +6,7 @@ gem 'devise'
 gem 'jquery-rails'
 gem 'nifty-generators'
 gem 'tiny_mce'
+gem 'taps', '0.3.14'
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'

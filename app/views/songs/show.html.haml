@@ -1,14 +1,16 @@
-- title "Song"
+- title "#{@song.artist} - #{@song.title}"
 
 %p
-  %strong Title:
-  = @song.title
-%p
-  %strong Artist:
+  %strong Wykonawca:
   = @song.artist
+  
 %p
-  %strong Description:
-  = @song.description
+  %strong Tytuł:
+  = @song.title
 
 %p
-  = link_to "View All", songs_path
+  %strong Komentarz:
+  = raw(@song.description)
+
+%p
+  = link_to "wszystkie utwory", songs_path

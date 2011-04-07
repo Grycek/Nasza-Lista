@@ -1,16 +1,16 @@
 = form_for @song do |f|
   = f.error_messages
   %p
-    = f.label :title
-    %br
-    = f.text_field :title
-  %p
-    = f.label :artist
+    = f.label :artist, "Zespół"
     %br
     = f.text_field :artist
   %p
-    = f.label :description
+    = f.label :title, "Tytuł"
     %br
-    = f.text_area :description
+    = f.text_field :title
   %p
-    = f.submit
+    = f.label :description, "Komentarz"
+    %br
+    = f.text_area :description, :class => "mceEditor", :cols => 100, :rows => 20
+  %p
+    = f.submit "Dodaj utwór"

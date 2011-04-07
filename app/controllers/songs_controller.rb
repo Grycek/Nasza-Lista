@@ -1,6 +1,13 @@
 class SongsController < ApplicationController
+  uses_tiny_mce :options => { :theme => 'advanced',
+                              :mode => "textareas",
+                              :convert_urls => false,
+                              :theme_advanced_buttons1 => "bold,italic,underline,separator,strikethrough,bullist,numlist,link,separator,forecolor,backcolor",
+                              :theme_advanced_buttons2 => "",
+                              :theme_advanced_buttons3 => "", } , :only => [:new, :edit, :update, :create]
   before_filter :authenticate_user!, :except => [:index, :show]
   before_filter :authenticate_admin, :only => [:edit, :update, :destroy]
+  
   def index
     @songs = Song.find(:all, :order => 'LOWER(artist) ASC')
   end

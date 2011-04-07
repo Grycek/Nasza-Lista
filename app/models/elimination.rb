@@ -1,5 +1,6 @@
 class Elimination < ActiveRecord::Base
     validates_uniqueness_of :user_id
+    validates_presence_of :user_id
     belongs_to :user
     has_many :elimination_votes, :dependent => :destroy
     accepts_nested_attributes_for :elimination_votes

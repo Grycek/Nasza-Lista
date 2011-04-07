@@ -1,12 +1,9 @@
-Elimination votes
-- @songs.each do |song|
-  =song.artist
-  
+
 %table
   %tr
-    %th Artist
-    %th Title
-    %th Points
+    %th Wykonawca
+    %th Tytuł
+    %th Punkty
     - @eliminations.each do |el|
       %th
         =el.user.username
@@ -25,4 +22,4 @@ Elimination votes
             =el.elimination_votes.where("song_id = ?", song.id)[0].points
       
   
-= link_to "Zaglosuj", new_elimination_path
+= link_to "Zagłosuj", new_elimination_path

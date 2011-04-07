@@ -1,4 +1,4 @@
-- title "Profile"
+- title "Profil"
 %table
   %tr
     %td
@@ -16,13 +16,13 @@
     Twoje utwory:
   %table
     %tr
-      %th Artist
-      %th Title
+      %th Wykonawca
+      %th Tytuł
     - for song in @songs
       %tr
         %td= song.artist
         %td= song.title
-        %td= link_to 'Show', song
+        %td= link_to 'więcej', song
   %p= link_to "Dodaj utwór", new_song_path
 %hr
 %p
@@ -30,10 +30,10 @@
     Glosy w eliminacjach:
   %table
     %tr
-      %th Pos.
-      %th Artist
-      %th Title
-      %th Points
+      %th Poz.
+      %th Wykonawca
+      %th Tytuł
+      %th Pkt.
     - for vote in @votes
       %tr
         %td= points_to_pos(vote.points)
@@ -42,4 +42,4 @@
         %td= vote.points
           
 %hr
-=link_to "Edytuj haslo", edit_user_password_path
+=link_to "Edytuj haslo", edit_user_registration_path

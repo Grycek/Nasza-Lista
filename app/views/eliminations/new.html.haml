@@ -1,15 +1,24 @@
 = form_for @elimination do |f|
   = f.error_messages
   %p
-    = f.label     :description, "Opis"
+    - i = 1
+    %table
+      %tr
+        %th
+          Pozycja
+        %th
+          Utwór
+      = f.fields_for :elimination_votes do |builder|
+        %tr
+          %td
+            = builder.label :song_id, "#{i}."
+          %td
+            = builder.select :song_id, @songs.map {|s| [ "#{s.artist} - #{s.title}" ,s.id]}
+        = builder.hidden_field :points, :value => pos_to_points(i)
+        - i += 1
+  %p
+    = f.label     :description, "Komentarz"
     %br
-    = f.text_area :description
-  - i = 1
-  = f.fields_for :elimination_votes do |builder|
-    = builder.label :song_id, "#{i}."
-    = builder.select :song_id, @songs.map {|s| [ "#{s.artist} - #{s.title}" ,s.id]}
-    = builder.hidden_field :points, :value => pos_to_points(i)
-    - i += 1
-    %br
+    = f.text_area :description, :class => "mceEditor", :cols => 100, :rows => 20
     
   = f.submit "Głosuj"

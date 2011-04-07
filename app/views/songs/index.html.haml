@@ -1,11 +1,11 @@
-- title "Songs"
+- title "Utwory"
 
 %table
   %tr
-    %th Artist
-    %th Title
+    %th Wykonawca
+    %th Tytuł
   - for song in @songs
     %tr
       %td= song.artist
       %td= song.title
-      %td= link_to 'Show', song
+      %td= link_to 'więcej', song
